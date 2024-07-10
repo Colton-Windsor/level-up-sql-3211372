@@ -8,3 +8,18 @@
 SELECT *
 FROM Customers
 WHERE Email = 'smac@kinetecoinc.com';
+
+INSERT INTO Customers
+  (FirstName, LastName, Email, Phone)
+VALUES ('Sam', 'McAdams', 'smac@kinetecoinc.com','555-555-1212'); 
+
+INSERT INTO Reservations
+  (CustomerID, Date, PartySize)
+VALUES (102, '2022-08-12 18:00:00', 5)
+
+SELECT *
+FROM Customers
+JOIN Reservations ON Customers.CustomerID = Reservations.CustomerID
+WHERE Customers.Email = 'smac@kinetecoinc.com';
+
+
