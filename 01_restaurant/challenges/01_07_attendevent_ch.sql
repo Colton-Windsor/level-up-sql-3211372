@@ -2,3 +2,17 @@
 
 -- The customer 'atapley2j@kinetecoinc.com' will be in
 -- attendance, and will bring 3 friends.
+
+INSERT INTO AnniversaryAttendees 
+  (CustomerID, PartySize)
+VALUES (
+  (SELECT CustomerID 
+    FROM Customers 
+    WHERE Email = 'atapley2j@kinetecoinc.com'),
+  4);
+
+SELECT * FROM AnniversaryAttendees;
+
+--Writing DELETE statement to rid my table of failed attempts
+DELETE FROM AnniversaryAttendees
+WHERE CustomerID IS NULL
