@@ -3,7 +3,8 @@
 -- Report 1: Show how many titles were published 
 -- in each year.
 
-SELECT Published, Title, COUNT(DISTINCT(Title)) AS PubCount
+SELECT Published, COUNT(DISTINCT(Title)) AS PubCount,
+GROUP_CONCAT(DISTINCT(Title))
 FROM Books
 GROUP BY Published
 ORDER BY PubCount DESC;
